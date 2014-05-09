@@ -8,11 +8,11 @@ This allows you to quickly track which domains and apps are active and which are
 
 ## Assumptions
 
-* RVM is installed on the server, and the bin path is /usr/local/rvm/bin/rvm
-* Apache vhost files are located in /etc/apache2/site-enabled/
-* Apache vhost files follow the "site-name.com" convention
-* If passenger is installed, site config files are stored in /etc/passenger.d/
-* Passenger files follow the "site-name.com.yml" convention
+* RVM is installed on the server, and the bin path is `/usr/local/rvm/bin/rvm`
+* Apache vhost files are located in `/etc/apache2/site-enabled/`
+* Apache vhost files follow the `site-name.com` convention
+* If passenger is installed, site config files are stored in `/etc/passenger.d/`
+* Passenger files follow the `site-name.com.yml` convention
 
 ## Installation
 
@@ -24,21 +24,21 @@ This allows you to quickly track which domains and apps are active and which are
 
 ## Options
 
-* -p [PORT NUMBER] : Specify a port number (default is 22)
-* -c [FILE NAME (optional)]: Output to .csv file instead of terminal (can specify a name)
-* -v : Output more information as to what's happening
-* -e [prod|stage|dev|etc.]: Specify an environment to output (defaults to 'all'; determined by passenger config files, so non-rails site will always return)
+* `-p [PORT NUMBER]` Specify a port number (default is 22)
+* `-c [FILE NAME (optional)]` Output to .csv file instead of terminal (can specify a name)
+* `-v` Output more information as to what's happening
+* `-e [prod|stage|dev|etc.]` Specify an environment to output (defaults to 'all'; determined by passenger config files, so non-rails site will always return)
 
-Examples:
+### Examples
 
-	Basic usage:
-	audit_ips someserver.com my_user -p 8080
+Basic usage:
+```audit_ips someserver.com my_user -p 8080```
 
-	Print to "IP Audit - someserver.com.csv":
-	audit_ips someserver.com my_user -p 8080 -c
+Print to "IP Audit - someserver.com.csv":
+```audit_ips someserver.com my_user -p 8080 -c```
 
-	Print to "IP Audit - my audit.csv":
-	audit_ips someserver.com my_user -p 8080 -c "my audit"
+Print to "IP Audit - my audit.csv":
+```audit_ips someserver.com my_user -p 8080 -c "my audit"```
 
 ## Terminal Output
 
