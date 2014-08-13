@@ -2,12 +2,18 @@
 require 'net/ssh'
 require 'optparse'
 require 'ostruct'
+
+begin
+ require 'psych'
+ rescue ::LoadError
+end
 require 'yaml'
 
 begin
   require 'io/console'
 rescue LoadError
 end
+
 
 
 module IpAuditor
@@ -286,6 +292,7 @@ module IpAuditor
       puts "Authentication Error! Did you correctly type in your username and password?"
     rescue Exception => e
       puts "Error! Have you specified the correct port? Or maybe there's a problem with the code..."
+      puts e
     end
 
   end
